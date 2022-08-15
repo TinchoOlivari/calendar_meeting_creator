@@ -12,9 +12,15 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Calendar Meeting Creator',
-      theme: AppStyles.defaultTheme, 
+      title: 'Calendar Event Creator',
+      theme: AppStyles.defaultTheme,
       home: const HomePage(),
+      builder: (context, child) {
+        return ScrollConfiguration(
+          behavior: NoScrollIndicator(),
+          child: child!,
+        );
+      },
     );
   }
 }
